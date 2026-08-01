@@ -7,102 +7,98 @@
 
 <style>
 
-/* RESET */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
-}
-
 /* BASE */
 body {
-  background-color: #1A1A1A;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: radial-gradient(circle at top, #1f1f1f, #0d0d0d);
   color: white;
-  line-height: 1.6;
 }
 
-/* CONTENEDOR */
-.container {
-  max-width: 1100px;
-  margin: auto;
-  padding: 40px 20px;
+/* NAVBAR */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
 }
 
-/* GRID */
-.grid {
+.logo {
+  height: 40px;
+}
+
+/* HERO */
+.hero {
   display: grid;
   grid-template-columns: 1fr;
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: auto;
   gap: 40px;
 }
 
-@media(min-width: 768px){
-  .grid {
+@media(min-width:768px){
+  .hero {
     grid-template-columns: 1fr 1fr;
   }
 }
 
-/* HERO */
 h1 {
-  font-size: 42px;
+  font-size: 48px;
   line-height: 1.2;
-  margin-bottom: 20px;
 }
 
-.highlight {
-  color: #ccc;
+.sub {
+  color: #aaa;
+  margin: 20px 0;
+  font-size: 18px;
 }
 
 .gradient {
-  background: linear-gradient(90deg, #C0C0C0, #ffffff);
+  background: linear-gradient(90deg,#C0C0C0,#ffffff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-}
-
-/* TEXTO */
-p {
-  color: #bbb;
-  margin-bottom: 20px;
 }
 
 /* BOTÓN */
 .cta {
   display: inline-block;
-  padding: 15px 30px;
-  background: linear-gradient(135deg, #C0C0C0, #ffffff);
-  color: #1A1A1A;
-  text-decoration: none;
+  padding: 16px 32px;
+  border-radius: 10px;
+  background: linear-gradient(135deg,#C0C0C0,#fff);
+  color: black;
   font-weight: bold;
-  border-radius: 8px;
+  text-decoration: none;
   transition: 0.3s;
 }
 
 .cta:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(255,255,255,0.2);
+  transform: scale(1.05);
+  box-shadow: 0 10px 30px rgba(255,255,255,0.2);
 }
 
 /* TRUST */
 .trust {
   margin-top: 15px;
-  font-size: 14px;
   color: #888;
+  font-size: 14px;
 }
 
-/* IMG */
-img {
+/* IMAGEN */
+.hero img {
   width: 100%;
-  border-radius: 10px;
+  border-radius: 12px;
 }
 
 /* SECCIONES */
 .section {
-  padding: 60px 20px;
-  text-align: center;
+  padding: 80px 20px;
+  max-width: 1100px;
+  margin: auto;
 }
 
-.section-dark {
-  background: #111;
+.center {
+  text-align: center;
 }
 
 /* CARDS */
@@ -118,9 +114,16 @@ img {
 }
 
 .card {
-  background: #222;
-  padding: 20px;
-  border-radius: 10px;
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  padding: 25px;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border-color: #C0C0C0;
 }
 
 /* TESTIMONIOS */
@@ -135,16 +138,12 @@ img {
   }
 }
 
-/* ANIMACIÓN */
-.reveal {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: 0.6s;
-}
-
-.reveal.active {
-  opacity: 1;
-  transform: translateY(0);
+/* FOOTER */
+.footer {
+  text-align: center;
+  padding: 40px;
+  color: #777;
+  border-top: 1px solid #222;
 }
 
 </style>
@@ -152,23 +151,28 @@ img {
 
 <body>
 
+<!-- NAV -->
+<div class="nav">
+  <img src="logo.png" class="logo">
+  <a href="https://wa.me/XXXXXXXXXX" class="cta">Contactar</a>
+</div>
+
 <!-- HERO -->
-<div class="container grid">
+<div class="hero">
 
 <div>
 <h1>
-¿Tu equipo pierde horas respondiendo WhatsApp?
-<span class="highlight">Clientes esperando. Ventas que no llegan.</span>
-<span class="gradient"> Automatiza con IA y responde en segundos, 24/7.</span>
+¿Tu equipo pierde horas respondiendo WhatsApp?<br>
+<span style="color:#888">Clientes esperando. Ventas que no llegan.</span><br>
+<span class="gradient">Automatiza con IA y responde en segundos.</span>
 </h1>
 
-<p>
-Implementamos asistentes inteligentes que atienden, califican y convierten clientes por ti.
-<strong>Ahorra más de 10 horas por semana.</strong>
+<p class="sub">
+Implementamos sistemas inteligentes que atienden, califican y convierten clientes automáticamente.
 </p>
 
-<a href="https://wa.me/XXXXXXXXXX" target="_blank" class="cta">
-Impulsa tu PYME ahora →
+<a href="https://wa.me/XXXXXXXXXX" class="cta">
+Impulsa tu negocio →
 </a>
 
 <div class="trust">
@@ -184,44 +188,48 @@ Impulsa tu PYME ahora →
 </div>
 
 <!-- BENEFICIOS -->
-<div class="section reveal">
-<div class="container cards">
+<div class="section center">
+<h2>Lo que obtienes</h2>
+
+<div class="cards">
 
 <div class="card">
-<h3>Responde al instante</h3>
-<p>Nunca pierdas un cliente.</p>
+<h3>Respuestas instantáneas</h3>
+<p>Atiende clientes 24/7 sin esfuerzo.</p>
 </div>
 
 <div class="card">
-<h3>Automatiza ventas</h3>
-<p>Convierte chats en ingresos.</p>
+<h3>Más ventas</h3>
+<p>Convierte conversaciones en ingresos.</p>
 </div>
 
 <div class="card">
-<h3>Escala sin contratar</h3>
-<p>Opera más con menos.</p>
+<h3>Escala tu negocio</h3>
+<p>Crece sin contratar más personal.</p>
 </div>
 
 </div>
 </div>
 
 <!-- RESULTADOS -->
-<div class="section section-dark reveal">
+<div class="section center">
 <h2>Resultados reales</h2>
-<p>+40% conversiones y -70% tiempo de respuesta.</p>
+<p>+40% en conversiones y reducción del 70% en tiempos de respuesta.</p>
 </div>
 
 <!-- TESTIMONIOS -->
-<div class="section reveal">
-<div class="container testimonials">
+<div class="section">
+<h2 class="center">Clientes</h2>
+
+<div class="testimonials">
 
 <div class="card">
-<p>"Vendemos más sin responder manualmente."</p>
+<p>"Ahora vendemos más sin responder manualmente."</p>
 <strong>Juan Pérez</strong>
 </div>
 
 <div class="card">
-<p>"Automatización que sí funciona."</p>
+<p>"La mejor decisión para nuestro negocio."</p>
 <strong>Laura Gómez</strong>
 </div>
 
@@ -229,25 +237,17 @@ Impulsa tu PYME ahora →
 </div>
 
 <!-- CTA FINAL -->
-<div class="section reveal">
+<div class="section center">
 <h2>Empieza hoy</h2>
 <a href="https://wa.me/XXXXXXXXXX" class="cta">
 Hablar por WhatsApp →
 </a>
 </div>
 
-<script>
-const reveal = document.querySelectorAll('.reveal');
-
-window.addEventListener('scroll', () => {
-  reveal.forEach(el => {
-    const top = el.getBoundingClientRect().top;
-    if (top < window.innerHeight - 100) {
-      el.classList.add('active');
-    }
-  });
-});
-</script>
+<!-- FOOTER -->
+<div class="footer">
+Bot-On © 2026 — Automatización con IA
+</div>
 
 </body>
 </html>
